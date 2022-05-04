@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var property = require('./routes/property');
 
 var app = express();
 
@@ -24,8 +25,25 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+const db = require("./models");
+db.mongoose
+  .connect(db.url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(() => {
+    console.log("Connected to the database!");
+  })
+  .catch(err => {
+    console.log("Cannot connect to the database!", err);
+    process.exit();
+  });
+
+
 app.use('/', routes);
 app.use('/users', users);
+app.use('/property',property);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -58,7 +76,7 @@ app.use(function (err, req, res, next) {
     });
 });
 
-app.set('port', 3000);
+app.set('port', 8081);
 
 var server = app.listen(app.get('port'), function () {
     debug('Express server listening on port ' + server.address().port);

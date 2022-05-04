@@ -1,0 +1,59 @@
+
+.container
+  form(action='/property/create' method='post')
+    label(for='listing_url') listing_url
+    input#fname(type='text' name='listing_url' placeholder='URL..')
+    br
+    label(for='name') Name
+    input(type="text" name='name' placeholder='Name..') 
+    br
+    label(for='summary') Summary 
+    input(type="text" name='summary' placeholder='Summary..') 
+    br
+    label(for='space') Space
+    input#fname(type='text' name='space' placeholder='Space..')
+    br
+    label(for='description') Description
+    input(type="text" name='description' placeholder='Description..') 
+    br
+    label(for='overview') Overview
+    input#fname(type='text' name='overview' placeholder='Overview..')
+    br
+    label(for='notes') Notes
+    input(type="text" name='notes' placeholder='Notes..') 
+    br
+    label(for='transit') Transit
+    input#fname(type='text' name='transit' placeholder='Transit..')
+    br
+    label(for='access') Access
+    input(type="text" name='access' placeholder='Access..') 
+    br
+    label(for='interaction') Interaction 
+    input#fname(type='text' name='interaction' placeholder='interaction..')
+    br
+    label(for='house_rules') Rules
+    input(type="text" name='house_rules' placeholder='Rules..') 
+    br
+
+    label(for='property_type') Type
+    input#fname(type='text' name='property_type' placeholder='type..')
+    br
+    label(for='room_type') Room Type
+    input(type="text" name='room_type' placeholder='room..') 
+    br
+    label(for='bed_type') Bed
+    input#fname(type='text' name='bed_type' placeholder='Bed..')
+    br
+    label(for='minimum_nights') Min Nights
+    input(type="number" name='minimum_nights' placeholder='Min night..') 
+    br
+    label(for='maximum_nights') Max Nights
+    input#fname(type='Number' name='maximum_nights' placeholder='Max night..')
+    br
+    label(for='cancellation_policy') Policy
+    input(type="text" name='cancellation_policy' placeholder='policy..') 
+    br
+    label(for='last_scraped') Scraped 
+    input#fname(type='text' name='last_scraped' placeholder='srapped..')
+    br 
+    input(type='submit' value='Submit')
